@@ -11,6 +11,13 @@ const taskSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  //desc
+  desc: {
+    type: String,
+    required: [false, "task description is optional"],
+    default: " ",
+    maxlength: [150, "length should be less than 150 characters"],
+  },
 });
 
 module.exports = mongoose.model("Task", taskSchema);
