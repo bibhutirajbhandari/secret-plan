@@ -1,6 +1,6 @@
 const url =
   "https://api.openweathermap.org/data/2.5/weather?lat=27.700769&lon=85.300140&appid=24586a321a4110eb8e15a1f249b602cb&units=metric";
-//query location: kathmandu
+//query location: lat and lon
 
 fetch(url)
   .then(async (res) => {
