@@ -59,9 +59,9 @@ const clearDesc = asyncWrapper(async (req, res) => {
   }
 
   if ("desc" in task) {
-    task["desc"] = " ";
+    task["desc"] = "";
     await task.save();
-    // await task.updateOne({ desc: "75d6rtyhjnht" });
+    // await task.updateOne({ desc: " " });
     res.status(201).json(task);
   }
 });
