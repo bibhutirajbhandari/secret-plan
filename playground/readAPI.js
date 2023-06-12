@@ -1,6 +1,7 @@
-const city = process.argv.slice(2);
+// const city = process.argv.slice(2);
+const state = "CA";
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=24586a321a4110eb8e15a1f249b602cb&units=metric`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=Bangalore,${Karnataka}&appid=24586a321a4110eb8e15a1f249b602cb&units=metric`;
 
 //without async await
 // function weather() {
@@ -51,6 +52,7 @@ async function weather() {
 async function parser(res) {
   try {
     const jsondata = await res.json();
+    console.log(jsondata);
 
     const data = {
       name: jsondata.name,
