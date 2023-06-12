@@ -1,6 +1,7 @@
 const express = require("express");
 const Pets = require("./model/pets");
 const connectdb = require("./db/connect");
+const updateSchema = require("./model/updateSchema");
 require("dotenv").config();
 
 const app = express();
@@ -19,6 +20,8 @@ async function start() {
 }
 start();
 
+app.use("/updatedb", updateSchema);
+
 app.post("/pets", async (req, res) => {
   const task = await Pets.create(req.body);
   res.status(200).json({ task });
@@ -32,6 +35,8 @@ app.get("/pets", async (req, res) => {
     city: context["city"],
     breed: context["breed"],
   });
+
+  // endpoints: search by /city /state /breed /all_three
 
   if (!result) {
     return res.send(404).json({ message: "no records of such kind found!" });

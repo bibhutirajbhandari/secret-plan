@@ -7,12 +7,12 @@
 // 			Guess a number between 1 and 100: 40
 // 			You got it!
 
-const target = Math.random() * 100; //random num between 0 to 100
+// const target = Math.random() * 100; //random num between 0 to 100
 
 function guess(target) {
   let flag = false;
 
-  while (flag === false) {
+  while (!flag) {
     let num = prompt("guess the number");
 
     if (num > target) {
@@ -22,7 +22,7 @@ function guess(target) {
     } else {
       console.log("You got it!");
       flag = true;
-      break;
+      // break;
     }
   }
 }
@@ -41,6 +41,5 @@ function guess(target) {
         guess(target);
       } else {
         console.log("You got it!");
-        flag = true;
     }
   } */

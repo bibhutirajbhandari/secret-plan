@@ -16,10 +16,21 @@ const petSchema = new mongoose.Schema({
     required: [true, "must enter your choice of dog breed"],
     trim: true,
   },
-  count: {
-    type: Number,
-    required: true,
-  },
+  // petname: {
+  //   type: String,
+  //   required: [true, "must enter pet name"],
+  //   trim: true,
+  // },
+  // petage: {
+  //   type: String,
+  //   required: [true, "define pet age"],
+  //   trim: true,
+  // },
+  // contact: {
+  //   type: Number,
+  //   required: [true, "define owner's contact info"],
+  //   trim: true,
+  // },
 });
 
 module.exports = mongoose.model("pet-list", petSchema);
